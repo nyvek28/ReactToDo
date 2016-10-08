@@ -1,0 +1,11 @@
+
+//Base styles
+@import 'base/variables';
+@import 'base/generics';
+
+//foundation
+@import 'base/foundation-settings';
+@import 'foundation';
+@include foundation-everything;
+
+//Component styles
