@@ -58,4 +58,45 @@ describe('TodoAPI', () => {
 
   });
 
+  describe('filterTodos', () => {
+    var todos = [{
+          id: 1,
+          text: 'Text',
+          completed: true
+        },{
+          id: 2,
+          text: 'Other',
+          completed: false
+        },{
+          id: 3,
+          text: 'Some text',
+          completed: true
+        }];
+
+    it('should return all items if showCompleted is true', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, true, '');
+
+      expect(filteredTodos.length).toBe(3);
+    });
+
+    it('should return uncompleted items if showCompleted is false', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, false, '');
+
+      expect(filteredTodos.length).toBe(1);
+    });
+
+    it('should sort by not completed first', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, true, '');
+
+      expect(filteredTodos[0].id).toBe(2);
+    });
+
+    it('should return similar to text sent', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, true, 'text');
+
+      expect(filteredTodos.length).toBe(2);
+    });
+
+  });
+
 });
