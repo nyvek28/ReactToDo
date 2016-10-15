@@ -28,7 +28,8 @@ module.exports = {
       './app/api'
     ],
     alias: {
-      AppStyles: 'app/styles/app.scss'
+      AppStyles: 'app/styles/app.scss',
+      Actions: 'app/actions/actions.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
