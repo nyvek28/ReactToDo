@@ -1,5 +1,6 @@
 
 import {AddTodo} from 'AddTodo'
+import * as actions from 'Actions'
 
 var React = require('react'),
     ReactDOM = require('react-dom'),
@@ -14,7 +15,7 @@ describe('AddTodo', () => {
 
   it('should dispatch ADD_TODO when submited', () => {
     var sampleText = 'Some Text',
-        action = {type: 'ADD_TODO', text: sampleText},
+        action = actions.startAddTodo(sampleText),
         spy = expect.createSpy(),
         addTodo = TestUtils.renderIntoDocument(<AddTodo dispatch = {spy}/>),
         $el = $(ReactDOM.findDOMNode(addTodo))

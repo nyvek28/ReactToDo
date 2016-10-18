@@ -9,8 +9,6 @@ var React = require('react'),
 
 store.subscribe(() => {
   var state = store.getState()
-
-  console.log('New state', state)
   TodoAPI.setTodos(state.todos)
 })
 
