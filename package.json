@@ -1,7 +1,7 @@
 {
-  "name": "react-weather",
+  "name": "react-todo",
   "version": "1.0.0",
-  "description": "React Weather Project",
+  "description": "React Todo Project",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
